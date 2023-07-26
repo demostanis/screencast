@@ -3307,7 +3307,7 @@ get_region() {
     print_info 'single click to select a window, click and drag to select a region'
     print_info 'use arrow keys to fine tune when dragging, right click or any other keystroke to cancel'
     
-    screen_region="$(slop -o -f '%x %y %w %h')" || exit_program 'screen region was not selected'
+    screen_region="$(slop -f '%x %y %w %h')" || exit_program 'screen region was not selected'
     
     if ! printf '%s' "$screen_region" | grep -Eq '^([0-9]+[[:space:]]){3}[0-9]+$'
     then
